@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello TheaterplayController!{% endblock %}
+
+{% block body %}
+<table border=1 >
+<tr>
+<th>id</th>
+<th>title</th>
+<th>genre</th>
+<th>duration</th>
+<th>action</th>
+
+</tr>
+{% for p in display %}
+<tr>
+<td>{{ p.id }}</td>
+<td>{{ p.title | upper }}</td>
+<td>{{ p.genre }}</td>
+<td>{{ p.duration }}</td>
+<th><a href="{{ path('add_show') }}">Link Text</a></th>
+
+</tr>
+
+{% endfor %}
+</table>
+{% endblock %}
